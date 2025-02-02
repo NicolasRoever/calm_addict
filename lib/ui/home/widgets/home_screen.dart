@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart'; // Import material.dart
 import 'package:calm_addict_flutter/ui/home/view_models/home_view_model.dart';
+import 'package:go_router/go_router.dart';
+
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key, required this.title});
@@ -15,29 +17,34 @@ class HomeScreen extends ConsumerWidget {
     // Access the ViewModel to call methods
     final viewModel = ref.read(counterProvider.notifier);
 
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
       ),
-      child: Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              'Hi!',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
             const Text(
               'You have pushed the button this many times:',
-              style: TextStyle(fontSize: 16),
             ),
             Text(
               '$counter', // Displays the current counter value
-              style: const TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-              ),
             ),
             const SizedBox(height: 20),
-            CupertinoButton.filled(
+            ElevatedButton(
               onPressed: viewModel.incrementCounter, // Call ViewModel logic
               child: const Text('Increment'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.push('/meditation-player');
+              },
+              child: const Text('Go to Meditation Player'),
             ),
           ],
         ),

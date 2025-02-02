@@ -1,8 +1,14 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-// A StateNotifier to manage the counter state
-class CounterViewModel extends StateNotifier<int> {
-  CounterViewModel() : super(0); // Initialize the counter at 0
+// This line is needed for code generation
+part 'home_view_model.g.dart';
+
+@riverpod
+class Counter extends _$Counter {
+  @override
+  int build() {
+    return 0; // Initialize the counter at 0
+  }
 
   // Method to increment the counter
   void incrementCounter() {
@@ -10,7 +16,7 @@ class CounterViewModel extends StateNotifier<int> {
   }
 }
 
-// The provider that exposes CounterViewModel
-final counterProvider = StateNotifierProvider<CounterViewModel, int>(
-  (ref) => CounterViewModel(),
-);
+
+
+
+

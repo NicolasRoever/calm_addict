@@ -3,21 +3,23 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../ui/tag_chip.dart';
+import 'package:calm_addict_flutter/ui/core/themes/ui/tag_chips.dart';
 import 'colors.dart';
 
 abstract final class AppTheme {
-  static const _textTheme = TextTheme(
-    headlineLarge: TextStyle(
+  static final _textTheme = TextTheme(
+    headlineLarge: GoogleFonts.notoSerif(
       fontSize: 32,
       fontWeight: FontWeight.w500,
+      color: AppColors.lightColorScheme.primary,
     ),
-    headlineSmall: TextStyle(
+    headlineSmall: GoogleFonts.notoSerif(
       fontSize: 18,
       fontWeight: FontWeight.w400,
     ),
-    titleMedium: TextStyle(
+    titleMedium: GoogleFonts.notoSerif(
       fontSize: 18,
       fontWeight: FontWeight.w500,
     ),
@@ -48,14 +50,13 @@ abstract final class AppTheme {
 
   static const _inputDecorationTheme = InputDecorationTheme(
     hintStyle: TextStyle(
-      // grey3 works for both light and dark themes
       color: AppColors.grey3,
       fontSize: 18.0,
       fontWeight: FontWeight.w400,
     ),
   );
 
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData theme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
     colorScheme: AppColors.lightColorScheme,
@@ -64,20 +65,6 @@ abstract final class AppTheme {
     extensions: [
       TagChipTheme(
         chipColor: AppColors.whiteTransparent,
-        onChipColor: Colors.white,
-      ),
-    ],
-  );
-
-  static ThemeData darkTheme = ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark,
-    colorScheme: AppColors.darkColorScheme,
-    textTheme: _textTheme,
-    inputDecorationTheme: _inputDecorationTheme,
-    extensions: [
-      TagChipTheme(
-        chipColor: AppColors.blackTransparent,
         onChipColor: Colors.white,
       ),
     ],

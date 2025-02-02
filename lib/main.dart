@@ -1,9 +1,10 @@
-import 'package:flutter/cupertino.dart';
-import 'package:calm_addict_flutter/ui/home/widgets/home_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:calm_addict_flutter/ui/core/themes/theme.dart';
+import 'package:calm_addict_flutter/routing/router.dart';
 
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -12,10 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp.router(
       title: 'Riverpod MVVM Demo',
-      theme: const CupertinoThemeData(),
-      home: const HomeScreen(title: 'Home'),
+      theme: AppTheme.theme,
+      routerConfig: router, // Use the router from the external file
     );
   }
 }
+
+

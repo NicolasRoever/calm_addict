@@ -7,7 +7,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../themes/colors.dart';
+import '../../../core/themes/colors.dart';
 
 class TagChip extends StatelessWidget {
   const TagChip({

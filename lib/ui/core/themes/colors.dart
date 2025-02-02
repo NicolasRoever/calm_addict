@@ -13,11 +13,11 @@ abstract final class AppColors {
   static const whiteTransparent =
       Color(0x4DFFFFFF); // Figma rgba(255, 255, 255, 0.3)
   static const blackTransparent = Color(0x4D000000);
-  static const red1 = Color(0xFFE74C3C);
+
 
   static const lightColorScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: AppColors.black1,
+    primary: Color(0xFF24523B),
     onPrimary: AppColors.white1,
     secondary: AppColors.black1,
     onSecondary: AppColors.white1,
@@ -27,15 +27,5 @@ abstract final class AppColors {
     onError: Colors.red,
   );
 
-  static const darkColorScheme = ColorScheme(
-    brightness: Brightness.dark,
-    primary: AppColors.white1,
-    onPrimary: AppColors.black1,
-    secondary: AppColors.white1,
-    onSecondary: AppColors.black1,
-    surface: AppColors.black1,
-    onSurface: Colors.white,
-    error: Colors.black,
-    onError: AppColors.red1,
-  );
+
 }
