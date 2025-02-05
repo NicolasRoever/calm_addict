@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		bhuVhPjzn38mG6dbwgr0YfiA83E=
+		7PHHBgPtVA98+Pq0AufK1m9Ff7M=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		untVGFQw0BSO9WaxQwuKpNQXoIM=
+		iO50wgrG4Au8rSMcZOaE/siS0BU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		nM9anPwqou1LzBrzLIZw/ykmT0Y=
+		deIBm6hThKWNTkAH8QfD7KMBs7k=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -843,6 +843,10 @@
 		<data>
 		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
 		</data>
+		<key>GoogleService-Info.plist</key>
+		<data>
+		fqAwMrVmrLYqorJ/womfHXiTGak=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		ROS9m/cV93UFq1yRGprmL6d8WVQ=
@@ -936,7 +940,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zTkyFGc1eagQLNBIRpLo8HuRhm931Nmvmo4e6IiFO68=
+			b1lKGX26r1L5iYXy2Efy22UWqiB+rXHjOyoQ7gOd6d8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -950,7 +954,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2lXnfhNLVrT3MZez2qF1bLBWUoH5DvQijSDeNtF/dz4=
+			vEpEktJKpK9mlQF+xzmBlhRFnyRskazz6azY73/h2to=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -999,7 +1003,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eZj9yIJ8yNMH7Vjy2DdECjSmh7QmYAKvoyMMZTBb+oE=
+			V+HXKYiQyRapwhF+620o+KgdRmwzNeAznX9PpdTWKu4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -2173,6 +2177,13 @@
 			<key>hash2</key>
 			<data>
 			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
+			</data>
+		</dict>
+		<key>GoogleService-Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vmbrQ21euyz5qDYBlf0v2PBmJEeUAHUmVwY/UEyIdGw=
 			</data>
 		</dict>
 		<key>Runner.debug.dylib</key>

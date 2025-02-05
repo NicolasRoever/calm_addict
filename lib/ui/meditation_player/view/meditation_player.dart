@@ -5,6 +5,8 @@ import 'package:calm_addict_flutter/routing/routes.dart';
 
 /// The SecondPage widget that you navigate to from HomePage.
 class MeditationPlayer extends StatelessWidget {
+  const MeditationPlayer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

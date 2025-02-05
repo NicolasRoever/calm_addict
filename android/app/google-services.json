@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "723875432311",
+    "project_id": "calmaddict-123",
+    "storage_bucket": "calmaddict-123.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723875432311:android:3c14a9631c7c801de64372",
+        "android_client_info": {
+          "package_name": "com.calmaddict.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8mS_AeFbGFvOctZh470TvJlA-alSDiQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
