@@ -29,6 +29,13 @@ class HomeScreen extends ConsumerWidget {
               },
               child: const Text('Go to Meditation Player'),
             ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                context.push('/profile');
+              },
+              child: const Text('Go to Profile'),
+            ),
           ], 
         ),
       ),
