@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:calm_addict_flutter/ui/core/themes/theme.dart';
 import 'package:calm_addict_flutter/routing/router.dart';
+import 'package:go_router/go_router.dart';
+import 'package:calm_addict_flutter/routing/routes.dart';
+import 'package:calm_addict_flutter/routing/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
