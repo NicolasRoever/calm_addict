@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:calm_addict_flutter/routing/routes.dart';
 
 
 /// The SecondPage widget that you navigate to from HomePage.

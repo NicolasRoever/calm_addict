@@ -5,7 +5,6 @@ import 'package:calm_addict_flutter/ui/login/login_page.dart';
 import 'package:calm_addict_flutter/ui/meditation_player/view/meditation_player.dart';
 import 'package:calm_addict_flutter/ui/profile_screen/profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 
 

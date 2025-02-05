@@ -49,6 +49,9 @@ dependencies:
   test: ^1.20.0
   firebase_auth: ^5.0.0
   firebase_ui_auth: ^1.0.0
+  flutter_dotenv: ^5.1.0
+  supabase: ^2.6.2
+  supabase_flutter: ^2.6.2
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +67,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  firebase_auth_mocks: ^0.14.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
