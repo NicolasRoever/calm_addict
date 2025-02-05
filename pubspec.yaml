@@ -47,7 +47,8 @@ dependencies:
   json_annotation: ^4.9.0
   http: ^1.0.0
   test: ^1.20.0
-
+  firebase_auth: ^5.0.0
+  firebase_ui_auth: ^1.0.0
 
 dev_dependencies:
   flutter_test:

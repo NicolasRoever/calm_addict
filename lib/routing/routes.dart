@@ -5,4 +5,5 @@
 abstract final class Routes {
   static const home = '/home';
   static const meditationPlayer = '/meditation-player';
+  static const login = '/login';
 }
