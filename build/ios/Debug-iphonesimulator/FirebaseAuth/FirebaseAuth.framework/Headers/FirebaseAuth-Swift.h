@@ -1280,7 +1280,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, FIRAuthErrorCode, "AuthErrorCode", closed) {
   FIRAuthErrorCodeMissingClientIdentifier = 17093,
 /// Indicates that the nonce is missing or invalid.
   FIRAuthErrorCodeMissingOrInvalidNonce = 17094,
-/// Raised when n Cloud Function returns a blocking error. Will include a message returned from
+/// Raised when a Cloud Function returns a blocking error. Will include a message returned from
 /// the function.
   FIRAuthErrorCodeBlockingCloudFunctionError = 17105,
 /// Indicates that reCAPTCHA Enterprise integration is not enabled for this project.
@@ -3772,7 +3772,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, FIRAuthErrorCode, "AuthErrorCode", closed) {
   FIRAuthErrorCodeMissingClientIdentifier = 17093,
 /// Indicates that the nonce is missing or invalid.
   FIRAuthErrorCodeMissingOrInvalidNonce = 17094,
-/// Raised when n Cloud Function returns a blocking error. Will include a message returned from
+/// Raised when a Cloud Function returns a blocking error. Will include a message returned from
 /// the function.
   FIRAuthErrorCodeBlockingCloudFunctionError = 17105,
 /// Indicates that reCAPTCHA Enterprise integration is not enabled for this project.

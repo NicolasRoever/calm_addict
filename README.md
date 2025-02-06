@@ -2,6 +2,23 @@
 
 This is the code for the CalmAddict app. 
 
+```bash
+
+flutter clean
+
+flutter pub get
+
+cd ios
+pod repo update
+pod install --repo-update
+cd ..
+
+flutter run --verbose
+
+
+
+```
+
 
 ## Getting Started
 

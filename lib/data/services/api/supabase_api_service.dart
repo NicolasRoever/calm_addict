@@ -3,6 +3,7 @@ import 'package:supabase/supabase.dart';
 import 'package:calm_addict_flutter/domain/models/user_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:calm_addict_flutter/domain/models/user_model.dart';
+import 'package:calm_addict_flutter/domain/models/meditation_model.dart';
 
 class SupabaseApiService {
   final SupabaseClient client;
@@ -47,27 +48,47 @@ class SupabaseApiService {
     return true;
   }
 
-  /// Increments the user's meditation level by 1 in Supabase.
-  Future<bool> incrementUserMeditationLevel(String firebaseId) async {
+
+  // Get  meditation data from Supabase
+  Future<MeditationModel?> getMeditationData({
+    String? meditationId,
+    int? meditationLevel,
+    String? courseName,
+    int? levelInCourse,
+  }) async {
     try {
-      // First, get the current user level
-      final userData = await client
-          .from('UserTable')
-          .select('user_level')
-          .eq('user_id_firebase', firebaseId)
-          .single();
-      
-      final currentLevel = userData['user_level'] as int;
-      
-      // Increment the level and update
-      return await updateUserMeditationLevel(firebaseId, currentLevel + 1);
-      
+      // Start building the query on your MeditationTable.
+      var query = client.from('MeditationTable').select();
+
+      // Determine which filter(s) to apply.
+      if (meditationId != null) {
+        query = query.eq('meditation_id', meditationId);
+      } else if (courseName != null && levelInCourse != null) {
+        query = query.eq('course_name', courseName).eq('level_in_course', levelInCourse);
+      } else if (meditationLevel != null) {
+        query = query.eq('meditation_level', meditationLevel);
+      } else {
+        throw Exception('No valid criteria provided to retrieve meditation.');
+      }
+
+      // Retrieve a single record (or null if none match).
+      final data = await query.maybeSingle();
+      if (data == null) {
+        return null;
+      }
+      // Convert the returned map to a MeditationModel.
+      return MeditationModel.fromMap(data);
     } on PostgrestException catch (error) {
-      print('Error incrementing meditation level: ${error.message}');
+      print('Error retrieving meditation: ${error.message}');
       print('Error details: ${error.details}');
-      return false;
+      return null;
     }
   }
+  
+
+
+
+
 
   void testConnection() async {
   try {
