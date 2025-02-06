@@ -2,7 +2,6 @@
 import 'package:supabase/supabase.dart';
 import 'package:calm_addict_flutter/domain/models/user_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:calm_addict_flutter/domain/models/user_model.dart';
 import 'package:calm_addict_flutter/domain/models/meditation_model.dart';
 
 class SupabaseApiService {
@@ -17,7 +16,7 @@ class SupabaseApiService {
       final data = await client
         .from('UserTable')
         .select()
-        //.eq('user_id_firebase', firebaseId)
+        .eq('user_id_firebase', firebaseId)
         .maybeSingle();
 
       print("Retrieved specific user: $data");
@@ -58,7 +57,7 @@ class SupabaseApiService {
   }) async {
     try {
       // Start building the query on your MeditationTable.
-      var query = client.from('MeditationTable').select();
+      var query = client.from('MeditationsTable').select();
 
       // Determine which filter(s) to apply.
       if (meditationId != null) {

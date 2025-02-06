@@ -6,7 +6,7 @@ import 'dart:typed_data';
 import 'package:calm_addict_flutter/providers/providers.dart'; // Adjust the import path accordingly
 
 class MeditationPlayer extends ConsumerStatefulWidget {
-  const MeditationPlayer({Key? key}) : super(key: key);
+  const MeditationPlayer({super.key});
 
   @override
   ConsumerState<MeditationPlayer> createState() => _MeditationPlayerState();

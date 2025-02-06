@@ -1511,7 +1511,7 @@ SPEC CHECKSUMS:
   desktop_webview_auth: d645139460ef203d50bd0cdb33356785dd939cce
   DKImagePickerController: 946cec48c7873164274ecc4624d19e3da4c1ef3c
   DKPhotoGallery: b3834fecb755ee09a593d7c9e389d8b5d6deed60
-  file_picker: ce3938a0df3cc1ef404671531facef740d03f920
+  file_picker: b159e0c068aef54932bb15dc9fd1571818edaf49
   Firebase: a64bf6a8546e6eab54f1c715cd6151f39d2329f4
   firebase_auth: afa8b772e2b3a821462075513837c849b187abe3
   firebase_core: aa979ae726f00b3ef4ccf59dfb96170af84efbd4
