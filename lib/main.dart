@@ -6,10 +6,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:calm_addict_flutter/firebase_options.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'dart:io';
 
 void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
+
+  print("Current directory: ${Directory.current.path}");
+
+  // Load the .env file. Ensure the file is at the project root.
+  await dotenv.load(fileName: ".env");
 
   // Initialize Firebase
   WidgetsFlutterBinding.ensureInitialized();
