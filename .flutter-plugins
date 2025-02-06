@@ -17,6 +17,7 @@ firebase_storage=/Users/nicolasroever/.pub-cache/hosted/pub.dev/firebase_storage
 firebase_storage_web=/Users/nicolasroever/.pub-cache/hosted/pub.dev/firebase_storage_web-3.10.7/
 flutter_plugin_android_lifecycle=/Users/nicolasroever/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.24/
 gtk=/Users/nicolasroever/.pub-cache/hosted/pub.dev/gtk-2.1.0/
+integration_test=/Users/nicolasroever/Applications/flutter/packages/integration_test/
 path_provider=/Users/nicolasroever/.pub-cache/hosted/pub.dev/path_provider-2.1.5/
 path_provider_android=/Users/nicolasroever/.pub-cache/hosted/pub.dev/path_provider_android-2.2.15/
 path_provider_foundation=/Users/nicolasroever/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.1/
