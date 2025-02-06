@@ -12,15 +12,6 @@ class SupabaseApiService {
   /// Retrieves the user from Supabase using the Firebase ID.
   Future<UserModel?> getUser(String firebaseId) async {
     try {
-      // First, let's get all records to see what's in the database
-      print("Getting all records from UserTable");
-      final allRecords = await client
-        .from('UserTable')
-        .select();
-      
-      print("All records in UserTable:");
-      print(allRecords);
-      
       // Now proceed with the original query
       final data = await client
         .from('UserTable')
@@ -46,7 +37,7 @@ class SupabaseApiService {
   Future<bool> updateUserMeditationLevel(String firebaseId, int newMeditationLevel) async {
     final response = await client
         .from('UserTable')
-        .update({'meditation_level': newMeditationLevel})
+        .update({'user_level': newMeditationLevel})
         .eq('user_id_firebase', firebaseId);
 
     if (response.error != null) {
@@ -56,6 +47,27 @@ class SupabaseApiService {
     return true;
   }
 
+  /// Increments the user's meditation level by 1 in Supabase.
+  Future<bool> incrementUserMeditationLevel(String firebaseId) async {
+    try {
+      // First, get the current user level
+      final userData = await client
+          .from('UserTable')
+          .select('user_level')
+          .eq('user_id_firebase', firebaseId)
+          .single();
+      
+      final currentLevel = userData['user_level'] as int;
+      
+      // Increment the level and update
+      return await updateUserMeditationLevel(firebaseId, currentLevel + 1);
+      
+    } on PostgrestException catch (error) {
+      print('Error incrementing meditation level: ${error.message}');
+      print('Error details: ${error.details}');
+      return false;
+    }
+  }
 
   void testConnection() async {
   try {
