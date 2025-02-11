@@ -50,38 +50,26 @@ class SupabaseApiService {
 
   // Get  meditation data from Supabase
   Future<MeditationModel?> getMeditationData({
-    String? meditationId,
+    int? meditationId,
     int? meditationLevel,
     String? courseName,
     int? levelInCourse,
   }) async {
-    try {
+   
       // Start building the query on your MeditationTable.
-      var query = client.from('MeditationsTable').select();
+      final data = await client
+      .from('MeditationsTable')
+      .select()
+      .eq('meditation_id', meditationId ?? 0)
+      .maybeSingle();
 
-      // Determine which filter(s) to apply.
-      if (meditationId != null) {
-        query = query.eq('meditation_id', meditationId);
-      } else if (courseName != null && levelInCourse != null) {
-        query = query.eq('course_name', courseName).eq('level_in_course', levelInCourse);
-      } else if (meditationLevel != null) {
-        query = query.eq('meditation_level', meditationLevel);
-      } else {
-        throw Exception('No valid criteria provided to retrieve meditation.');
-      }
 
-      // Retrieve a single record (or null if none match).
-      final data = await query.maybeSingle();
-      if (data == null) {
-        return null;
-      }
-      // Convert the returned map to a MeditationModel.
-      return MeditationModel.fromMap(data);
-    } on PostgrestException catch (error) {
-      print('Error retrieving meditation: ${error.message}');
-      print('Error details: ${error.details}');
-      return null;
-    }
+      return data != null ? MeditationModel.fromMap(data) : null;
+
+      
+    
+
+    
   }
   
 

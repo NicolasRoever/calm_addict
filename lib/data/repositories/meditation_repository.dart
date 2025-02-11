@@ -17,7 +17,7 @@ class MeditationRepository {
   /// Retrieves a single meditation based on one or more criteria.
   /// At least one criterion must be provided.
   Future<MeditationModel?> getMeditationData({
-    String? meditationId,
+    int? meditationId,
     int? meditationLevel,
     String? courseName,
     int? levelInCourse,
@@ -34,7 +34,7 @@ class MeditationRepository {
   /// The method first retrieves the meditation metadata from Supabase and
   /// then uses the storage service to download the audio file from Firebase Storage.
   Future<Uint8List?> getMeditationAudioFile({
-    String? meditationId,
+    int? meditationId,
     int? meditationLevel,
     String? courseName,
     int? levelInCourse,
@@ -50,7 +50,7 @@ class MeditationRepository {
     if (meditation == null) return null;
 
     // Use the file URL stored in the metadata.
-    final firebaseStorageUrl = meditation.fileUrl;
+    final firebaseStorageUrl = meditation.meditationUrl;
 
     // Download the audio file from Firebase Storage.
     return await storageService.getMeditationFile(firebaseStorageUrl);

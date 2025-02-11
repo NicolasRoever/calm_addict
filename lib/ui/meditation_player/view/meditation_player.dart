@@ -15,6 +15,7 @@ class MeditationPlayer extends ConsumerStatefulWidget {
 class _MeditationPlayerState extends ConsumerState<MeditationPlayer> {
   final AudioPlayer _audioPlayer = AudioPlayer();
   bool _isPlaying = false;
+  String _meditationInfo = '';
 
   /// Calls the repository to get the audio file for meditation_level = 1,
   /// then plays the audio from the retrieved bytes.
@@ -58,6 +59,26 @@ class _MeditationPlayerState extends ConsumerState<MeditationPlayer> {
     });
   }
 
+  Future<void> _fetchMeditationData() async {
+    final meditationRepository = ref.read(meditationRepositoryProvider);
+    
+    try {
+      final meditation = await meditationRepository.getMeditationData(
+        meditationId: 1,
+      );
+
+      setState(() {
+        _meditationInfo = meditation != null 
+            ? 'Meditation Info:\n${meditation.toString()}'
+            : 'No meditation data found';
+      });
+    } catch (e) {
+      setState(() {
+        _meditationInfo = 'Error fetching meditation data: $e';
+      });
+    }
+  }
+
   @override
   void dispose() {
     _audioPlayer.dispose();
@@ -85,8 +106,17 @@ class _MeditationPlayerState extends ConsumerState<MeditationPlayer> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
+              onPressed: _fetchMeditationData,
+              child: const Text('Fetch Meditation Data'),
+            ),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(_meditationInfo),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
               onPressed: () {
-                // Navigate back.
                 context.pop();
               },
               child: const Text('Go Back'),
